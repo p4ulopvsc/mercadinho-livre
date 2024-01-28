@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário</title>
+    <style>
+    	body {
+    		font-family: 'Segoe UI', Tahoma, Geneva,Verdana, sans-serif;
+    		margin: 20px;
+		}
+    	label {
+    		font-family: Arial, sans-serif; 
+    		margin-left: 10px;
+    		display: block;
+    		margin-bottom: 5px;
+    	}
+    	
+    	.label2 {
+    		font-family: Arial, sans-serif; 
+    		margin-left: 30px;  		
+    		margin-top: 35px;
+    		font-weight: bold;
+    		font-size: 35px;
+    	}
+    	.label4 {
+    	
+    	}
+    	   	
+    	.label3 {
+    		font-family: Arial, sans-serif;
+    		margin-top: 20px; 
+    		margin-left: 10px;
+    		white-space: pre-line;
+    		display: block;
+    		margin-bottom: 5px;
+    		background: #D0D0D0;
+    		color: #000;
+    		border-radius: 10px;
+    		padding:10px;
+    	}
+   
+    
+        input {
+        	
+    		width: 100%;
+    		padding: 8px;
+  		  margin-bottom: 15px;
+  		  box-sizing: border-box;
+        }
+
+        .coluna1 {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .coluna1 > div {
+        width: 100%;
+    	padding: 15px;
+    	margin-bottom: 20px;
+    	background-color: #F5F5F5;
+    	border-radius: 10px;
+	}
+
+        textarea {
+        	
+            width: 100%;
+            height: 200px;
+            box-sizing: border-box;
+        }
+        
+        .button2, button {
+    		padding: 10px;
+    		border: none;
+    		border-radius: 5px;
+ 	   	background-color: #202020;
+   	 	color: #FFFFFF;
+ 	   	width: calc(100% - 20px);
+    		cursor: pointer;
+        }
+        
+        .button2 {
+        	margin-left: 10px;
+    		margin-bottom: 20px;
+		}
+         .img {
+  	      margin-left: 10px;
+  	      background-color: #fff;
+  	      border-radius: 100px;
+     	   width: 100px;
+	        height: 100px;
+        }
+    </style>
+</head>
+<body>
+
+<form id="myForm">
+    <div class="coluna1">
+    
+    	<div class="coluna1">
+    		<img class="img" src="jopcs.jpeg">
+    		<label class="label2">Formulário</label> 
+    		<label class="label3">Obrigado pela preferência em escolher nosso serviço de criação de currículos! Caso tenham dúvidas ou necessitem de suporte durante o preenchimento, fiquem à vontade para entrar em contato. Estamos aqui para ajudar a impulsionar sua carreira. Preencham o formulário e deixem-nos trabalhar para destacar o melhor de vocês profissionalmente. Obrigado!
+    		
+ Contato: +55 87 8868-0008</label>
+    	</div>
+    	
+        <div>
+            <label for="name">Nome:</label>
+            <input type="text" id="name" name="nome">
+        </div>
+
+        <div>
+            <label for="rua">Rua:</label>
+            <input type="text" id="rua" name="rua" value="Quadra XX Lote XX">
+        </div>
+
+        <div>
+            <label for="bairro">Bairro:</label>
+            <input type="text" id="bairro" name="bairro" value="Vila Bela">
+        </div>
+        
+        <div>
+            <label for="cidade">Cidade:</label>
+            <input type="text" id="cidade" name="cidade" value="Serra Talhada-PE">
+        </div>
+
+        <div>
+            <label for="fone">Fone:</label>
+            <input type="text" id="fone" name="fone">
+        </div>
+        
+        <div>
+            <label for="fone2">Fone:</label>
+            <input type="text" id="fone2" name="fone2">
+        </div>
+
+        <div>
+            <label for="nascimento">Nascimento:</label>
+            <input type="text" id="nascimento" name="nascimento" value="XX/XX/XXXX">
+        </div>
+
+        <div>
+            <label for="estadoCivil">Estado Civil:</label>
+            <input type="text" id="estadoCivil" name="estadoCivil">
+        </div>
+
+        <div>
+            <label for="email">E-MAIL:</label>
+            <input type="email" id="email" name="email">
+        </div>
+    </div>
+
+    <div class="coluna1">
+        <div>
+            <label for="formacao">Formação:</label>
+            <div id="formacaoContainer">
+                <input type="text" name="formacao[]" value="Ensino Médio Completo">
+            </div>
+            <button type="button" onclick="addFormacao()">Adicionar Nova Formação</button>
+        </div>
+
+        <div>
+            <label for="experiencias">Experiência:</label>
+            <div id="experienciasContainer">
+                <input type="text" name="experiencias[]" value="Empresa: XXX Cargo: XXX Período: XXX">
+            </div>
+            <button type="button" onclick="addExperience()">Adicionar Nova Experiência</button>
+        </div>
+    </div>
+
+    <div class="coluna1">
+        <div>
+            <label for="objetivos">Objetivos:</label>
+            <textarea id="objetivos" name="objetivos" rows="4">Desempenhar bem as funções a mim conferidas
+Cumprindo com responsabilidade o meu papel
+Dentro desta empresa, visando o meu crescimento
+Profissional e pessoal, bem como o crescimento da mesma.</textarea>
+        </div>
+
+        <div>
+            <label for="caracteristicas">Características Pessoais:</label>
+            <textarea id="caracteristicas" name="caracteristicas" rows="4">- Responsabilidade
+- Comprometimento
+- Fácil aprendizado
+- Bom relacionamento
+- Espirito de equipe
+- Proatividade</textarea>
+        </div>
+    </div>
+
+    <button class="button2" type="button" onclick="downloadTxtFile()">Baixar</button>
+    <button class="button2" type="button" onclick="copyToClipboard()">Copiar para a Área de Transferência</button>
+    <label class="label3">Aperte no botão de copia e cole no WhatsApp da empresa que faremos o currículo, caso baixou envie o arquivo para a empresa.</label>
+
+
+    <script>
+        function addExperience() {
+            var container = document.getElementById("experienciasContainer");
+            var newInput = document.createElement("input");
+            newInput.type = "text";
+            newInput.name = "experiencias[]";
+            newInput.value = "Empresa: XXX Cargo: XXX Período: XXX";
+            container.appendChild(newInput);
+        }
+
+        function addFormacao() {
+            var container = document.getElementById("formacaoContainer");
+            var newInput = document.createElement("input");
+            newInput.type = "text";
+            newInput.name = "formacao[]";
+            newInput.value = "Curso: ";
+            container.appendChild(newInput);
+        }
+                
+        function downloadTxtFile() {
+    var formData = document.getElementById("myForm");
+    var data = new FormData(formData);
+
+    var textToSave = "Nome: " + data.get('nome') + "\nDados:" +
+        (data.get('rua') ? "\nRua: " + data.get('rua') : "") +
+        (data.get('bairro') ? "\nBairro: " + data.get('bairro') : "") +
+        (data.get('cidade') ? "\nCidade: " + data.get('cidade') : "") +
+        (data.get('fone') ? "\nFone: " + data.get('fone') : "") +
+        (data.get('fone2') ? "\nFone: " + data.get('fone2') : "") +
+        (data.get('nascimento') ? "\nNascimento: " + data.get('nascimento') : "") +
+        (data.get('estadoCivil') ? "\nEstado Civil: " + data.get('estadoCivil') : "") +
+        (data.get('email') ? "\nE-MAIL: " + data.get('email') : "") +
+        "\n\nDocumentos todos em mãos!" +
+        (data.getAll('formacao[]').filter(Boolean).length > 0 ? "\n\nFormação:\n" + data.getAll('formacao[]').join('\n') : "") +
+        (data.getAll('experiencias[]').filter(Boolean).length > 0 ? "\n\nExperiência:\n" + data.getAll('experiencias[]').join('\n') : "") +
+        (data.get('objetivos') ? "\n\nObjetivos:\n" + data.get('objetivos') : "") +
+        (data.get('caracteristicas') ? "\n\nCaracterísticas Pessoais:\n" + data.get('caracteristicas') : "");
+
+    var blob = new Blob([textToSave], { type: "text/plain" });
+    var link = document.createElement("a");
+    link.download = "formulario.txt";
+    link.href = window.URL.createObjectURL(blob);
+    link.style.display = "none";
+    document.body.appendChild(link);
+
+    link.click();
+    document.body.removeChild(link);
+}
+
+function copyToClipboard() {
+    var formData = document.getElementById("myForm");
+    var data = new FormData(formData);
+
+    var textToCopy = "Nome: " + data.get('nome') + "\nDados:" +
+        (data.get('rua') ? "\nRua: " + data.get('rua') : "") +
+        (data.get('bairro') ? "\nBairro: " + data.get('bairro') : "") +
+        (data.get('cidade') ? "\nCidade: " + data.get('cidade') : "") +
+        (data.get('fone') ? "\nFone: " + data.get('fone') : "") +
+        (data.get('fone2') ? "\nFone: " + data.get('fone2') : "") +
+        (data.get('nascimento') ? "\nNascimento: " + data.get('nascimento') : "") +
+        (data.get('estadoCivil') ? "\nEstado Civil: " + data.get('estadoCivil') : "") +
+        (data.get('email') ? "\nE-MAIL: " + data.get('email') : "") +
+        "\n\nDocumentos todos em mãos!" +
+        (data.getAll('formacao[]').filter(Boolean).length > 0 ? "\n\nFormação:\n" + data.getAll('formacao[]').join('\n') : "") +
+        (data.getAll('experiencias[]').filter(Boolean).length > 0 ? "\n\nExperiência:\n" + data.getAll('experiencias[]').join('\n') : "") +
+        (data.get('objetivos') ? "\n\nObjetivos:\n" + data.get('objetivos') : "") +
+        (data.get('caracteristicas') ? "\n\nCaracterísticas Pessoais:\n" + data.get('caracteristicas') : "");
+
+    var textArea = document.createElement("textarea");
+    textArea.value = textToCopy;
+    document.body.appendChild(textArea);
+    textArea.select();
+    document.execCommand('copy');
+    document.body.removeChild(textArea);
+
+    alert("Texto copiado para a Área de Transferência!");
+}
+    </script>
+
+</body>
+</html>
